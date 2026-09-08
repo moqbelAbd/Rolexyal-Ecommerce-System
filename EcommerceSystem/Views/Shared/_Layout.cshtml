@@ -325,6 +325,12 @@
                         </div>
                     </div>
                 }
+
+                <div class="flex-c-m h-full p-r-5">
+                    <div class="icon-header-item cl2 hov-cl1 trans-04 p-lr-11 js-show-sidebar" title="Menu">
+                        <i class="zmdi zmdi-view-list-alt" style="color: #fff;"></i>
+                    </div>
+                </div>
             </div>
 
             <div class="btn-show-menu-mobile hamburger hamburger--squeeze">
@@ -356,6 +362,11 @@
                         <li><a asp-controller="Wishlists" asp-action="Index" class="stext-102 trans-04">My Wishlist</a></li>
                     }
                     <li><a asp-controller="Home" asp-action="Profile">My Account</a></li>
+                }
+                else
+                {
+                    <li><a asp-area="Identity" asp-page="/Account/Login" asp-route-returnUrl="@Context.Request.Path">Login</a></li>
+                    <li><a asp-area="Identity" asp-page="/Account/Register">Register</a></li>
                 }
             </ul>
         </div>
@@ -451,6 +462,14 @@
                     </ul>
                 </div>
             </div>
+
+            @if (!(User.Identity?.IsAuthenticated ?? false))
+            {
+                <div class="w-full p-lr-35 p-b-15 d-flex gap-2">
+                    <a asp-area="Identity" asp-page="/Account/Login" asp-route-returnUrl="@Context.Request.Path" class="btn auth-btn-login flex-grow-1 text-center">Login</a>
+                    <a asp-area="Identity" asp-page="/Account/Register" class="btn auth-btn-register flex-grow-1 text-center">Register</a>
+                </div>
+            }
 
             <div class="w-full p-lr-35 p-b-20">
                 <div class="d-flex align-items-center justify-content-between w-full">

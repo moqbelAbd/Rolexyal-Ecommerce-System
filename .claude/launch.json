@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "ecommerce-web",
+      "runtimeExecutable": "dotnet",
+      "runtimeArgs": ["run", "--project", "EcommerceSystem", "--urls", "http://localhost:5087"],
+      "port": 5087
+    }
+  ]
+}

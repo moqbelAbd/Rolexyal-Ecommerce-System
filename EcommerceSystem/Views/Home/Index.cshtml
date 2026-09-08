@@ -517,4 +517,28 @@
         transform: scale(1.05);
     }
 
+    /* منع خروج أسهم السلايدر خارج حدود الشاشة على الموبايل والأجهزة اللوحية */
+    @@media (max-width: 991px) {
+        .sec-banner .slick-prev,
+        .sec-testimonials .slick-prev,
+        .sec-faq .slick-prev {
+            left: 5px !important;
+        }
+
+        .sec-banner .slick-next,
+        .sec-testimonials .slick-next,
+        .sec-faq .slick-next {
+            right: 5px !important;
+        }
+
+        .slick-prev, .slick-next {
+            width: 36px !important;
+            height: 36px !important;
+        }
+
+        .slick-prev i, .slick-next i {
+            font-size: 16px !important;
+        }
+    }
+
 </style>
